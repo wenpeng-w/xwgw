@@ -1,0 +1,244 @@
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption, input, textarea {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+  background-color: #ffffff;
+  color: #333333;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+img {border: 0}
+input:focus, button {
+  outline: none;
+}
+
+/* 公共样式 */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 标题 */
+.content-item-title {
+  position: relative;
+}
+.content-item-title .item-img {
+  height: 56px;
+  opacity: 0.6;
+}
+.content-item-title .item-title {
+  position: absolute;
+  left: 0;
+  bottom: 13px;
+  font-size: 24px;
+  color: #31373D;
+}
+.content-item-title .item-title-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 48px;
+  height: 5px;
+  background: #246CE9;
+}
+/* 顶部样式 */
+.header {
+  width: 100%;
+  height: 64px;
+  background-color: rgba(2, 6, 18, 0.5);
+}
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.header-logo {
+  float: left;
+  display: inline-block;
+  height: 36px;
+  margin-top: 14px;
+}
+.header-logo .header-logo-img {
+  width: 244px;
+  height: 36px;
+}
+.header-nav {
+  float: right;
+}
+.header-nav .nav-item {
+  display: inline-block;
+  line-height: 64px;
+  padding: 0 8px;
+  margin-left: 16px;
+}
+.header-nav .nav-item a {
+  display: block;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+.header-nav .nav-item.active {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.header-nav .nav-item.active:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 4px solid #246CE9;
+}
+/* 底部样式 */
+.footer {
+  width: 100%;
+  height: 92px;
+  background: #24242C;
+}
+.footer .footer-content {
+  padding-top: 20px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+}
+.footer .footer-content .copyright {
+  margin-right: 60px;
+}
+.footer .footer-content p {
+  margin-top: 4px;
+}
+.button {
+  display: block;
+  width: 176px;
+  height: 54px;
+  line-height: 54px;
+  background: #246CE9;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+}
+
+/** index **/
+/* banner 图 */
+.swiper-slide {
+  position: relative;
+}
+.banner-box {
+  width: 100%;
+  height: 532px;
+}
+.banner-box .banner-pic {
+  width: 100%;
+  height: 532px;
+}
+.banner-box .banner-info {
+  position: absolute;
+  left: 0;
+  top: 170px;
+  width: 100%;
+}
+.banner-box .banner-info .banner-info-inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+.banner-box .banner-info .button {
+  margin-top: 32px;
+}
+.banner-box .banner-info h2 {
+  font-size: 48px;
+  color: #ffffff;
+}
+.banner-box .banner-info p {
+  margin-top: 8px;
+  font-size: 28px;
+  color: #ffffff;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 32px;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: #ffffff;
+  width: 40px;
+  border-radius: 6px;
+  opacity: 1;
+}
+
+.content-meta-box {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 64px;
+  margin-bottom: 80px;
+}
+.content-meta-box .meta-item {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.content-meta-box .meta-item .meta-item-inner {
+  width: 250px;
+  height: 200px;
+  margin: 2px auto;
+  padding: 0 20px;
+  box-shadow: 0 0 6px 0 rgba(223,228,235,0.73);
+  border-radius: 4px;
+}
+.content-meta-box .meta-item .meta-item-icon {
+  width: 64px;
+  height: 64px;
+  margin-top: 26px;
+  margin-bottom: 7px;
+}
+.content-meta-box .meta-item .meta-item-title {
+  margin-bottom: 13px;
+  font-size: 18px;
+  color: #31373D;
+}
+.content-meta-box .meta-item .meta-item-text {
+  text-align: left;
+  font-size: 14px;
+  color: #505860;
+}
+
+.about-us-content {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+.about-us-content .about-us-info {
+  width: 767px;
+  height: 388px;
+  line-height: 32px;
+  padding: 32px;
+  background: #F7F9FB;
+  font-size: 18px;
+  color: #31373D;
+  letter-spacing: 0;
+}
+.about-us-content .about-us-img {
+  position: absolute;
+  right: 0;
+  bottom: 23px;
+  width: 455px;
+  height: 341px;
+}
