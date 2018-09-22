@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="renderer" content="webkit">
   <title>星威汽车科技(无锡)有限公司官网</title>
-  <link rel="stylesheet" href="./css/swiper.min.css">
+  <meta name="keywords" content="星威汽车科技(无锡)有限公司官网">
+  <meta name="description" content="星威汽车科技(无锡)有限公司是一家专注于商用车后市场解决机制的科技公司。星威致力于商用车维修一站式连锁加盟服务，向商用车维修服务群体提供技术、管理、产品、设备、人才等，实现加盟商为车主提供便捷、专业、优质、省心服务的目标，让车主在路途中安全无忧的行驶。">
+  <link rel="stylesheet" href="./css/jquery.bxslider.css">
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
@@ -15,49 +17,46 @@
     <a class="header-logo" href="index.html"><img class="header-logo-img" src="./imgs/logo.png" alt="星威汽车科技(无锡)有限公司"></a>
     <ul class="header-nav">
       <li class="nav-item active"><a href="index.html">闪耀星威</a></li>
-      <li class="nav-item"><a href="">业态资讯</a></li>
-      <li class="nav-item"><a href="">加盟共赢</a></li>
-      <li class="nav-item"><a href="joinUs.html">招贤纳士</a></li>
-      <li class="nav-item"><a href="">联系我们</a></li>
+      <li class="nav-item"><a href="news.html">业态资讯</a></li>
+      <li class="nav-item"><a href="joinUs.html">加盟共赢</a></li>
+      <li class="nav-item"><a href="recruit.html">招贤纳士</a></li>
+      <li class="nav-item"><a href="contactUs.html">联系我们</a></li>
     </ul>
   </div>
 </div>
 <!-- /Header -->
 <!-- Banner -->
 <div class="banner-box">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img class="banner-pic" src="./imgs/banner-1.jpg" alt="banner">
-        <div class="banner-info">
-          <div class="banner-info-inner">
-            <h2>您身边的商用车维养服务管家</h2>
-            <p>轻松学习随时诊断，安全畅行省钱更省心</p>
-          </div>
+  <ul id="bannerContainer">
+    <li>
+      <img class="banner-pic" src="./imgs/banner-1.jpg" alt="banner">
+      <div class="banner-info">
+        <div class="banner-info-inner">
+          <h2>您身边的商用车维养服务管家</h2>
+          <p>轻松学习随时诊断，安全畅行省钱更省心</p>
         </div>
       </div>
-      <div class="swiper-slide">
-        <img class="banner-pic" src="./imgs/banner-2.jpg" alt="banner">
-        <div class="banner-info">
-          <div class="banner-info-inner">
-            <h2>商用车一站式技术服务平台</h2>
-            <p>国内领显得商用车后技术服务互联网数据平台</p>
-          </div>
+    </li>
+    <li>
+      <img class="banner-pic" src="./imgs/banner-2.jpg" alt="banner">
+      <div class="banner-info">
+        <div class="banner-info-inner">
+          <h2>商用车一站式技术服务平台</h2>
+          <p>国内领显得商用车后技术服务互联网数据平台</p>
         </div>
       </div>
-      <div class="swiper-slide">
-        <img class="banner-pic" src="./imgs/banner-3.jpg" alt="banner">
-        <div class="banner-info">
-          <div class="banner-info-inner">
-            <h2>申请加盟入口</h2>
-            <p>技能培训，数据查询，云检测系列智能化技术服务方案</p>
-            <a class="button" href="">立即加入</a>
-          </div>
+    </li>
+    <li>
+      <img class="banner-pic" src="./imgs/banner-3.jpg" alt="banner">
+      <div class="banner-info">
+        <div class="banner-info-inner">
+          <h2>申请加盟入口</h2>
+          <p>技能培训，数据查询，云检测系列智能化技术服务方案</p>
+          <a class="xw-button_default" href="">立即加入</a>
         </div>
       </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
+    </li>
+  </ul>
 </div>
 <!-- /Banner -->
 <div class="content-meta-box">
@@ -118,18 +117,17 @@
   </div>
 </div>
 <!-- /Footer -->
-<script src="./js/swiper.min.js"></script>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jquery.bxslider.js"></script>
 <script>
-  var mySwiper = new Swiper ('.swiper-container', {
-    direction: 'horizontal', // 垂直切换选项
-    loop: true, // 循环模式选项./
-    autoplay: true, //可选选项，自动滑动
-
-    // 如果需要分页器
-    pagination: {
-      el: '.swiper-pagination',
-    }
-  })
+    $('#bannerContainer').bxSlider({
+        mode:'horizontal', // 默认的是水平
+        displaySlideQty:1, // 显示li的个数
+        moveSlideQty: 1,   // 移动li的个数
+        captions: true,   // 自动控制
+        auto: true,
+        controls: false   // 隐藏左右按钮
+    });
 </script>
 </body>
 </html>

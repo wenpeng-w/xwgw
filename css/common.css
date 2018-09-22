@@ -24,18 +24,79 @@ input:focus, button {
   outline: none;
 }
 
-/* 公共样式 */
+/** ======================== 公共样式 ======================== **/
 .container {
+  position: relative;
   width: 1200px;
   margin: 0 auto;
+}
+/* 按钮 */
+.xw-button_default {
+  display: block;
+  width: 176px;
+  height: 54px;
+  line-height: 54px;
+  background: #246CE9;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+.xw-button_default_middle {
+  display: inline-block;
+  padding: 0 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #246CE9;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.xw-button-default-icon {
+  position: relative;
+  display: inline-block;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 34px 0 58px;
+  background: #246CE9;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.xw-button-default-icon .xw-button-icon {
+  position: absolute;
+  top: 18px;
+  left: 34px;
+  display: inline-block;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  background-size: 100% 100%;
+  background-position: center;
+  vertical-align: middle;
+}
+.xw-button-outline-default {
+  display: inline-block;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 8px;
+  border: 1px solid #246CE9;
+  border-radius: 2px;
+  color: #246CE9;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* 标题 */
 .content-item-title {
   position: relative;
+  height: 56px;
 }
 .content-item-title .item-img {
-  height: 56px;
+  height: 44px;
   opacity: 0.6;
 }
 .content-item-title .item-title {
@@ -122,25 +183,13 @@ input:focus, button {
 .footer .footer-content p {
   margin-top: 4px;
 }
-.button {
-  display: block;
-  width: 176px;
-  height: 54px;
-  line-height: 54px;
-  background: #246CE9;
-  color: #ffffff;
-  text-align: center;
-  font-size: 24px;
-}
 
-/** index **/
+/** ======================== index ====================== **/
 /* banner 图 */
-.swiper-slide {
-  position: relative;
-}
 .banner-box {
   width: 100%;
   height: 532px;
+  background-color: #C2CAD8;
 }
 .banner-box .banner-pic {
   width: 100%;
@@ -156,7 +205,7 @@ input:focus, button {
   width: 1200px;
   margin: 0 auto;
 }
-.banner-box .banner-info .button {
+.banner-box .banner-info .xw-button_default {
   margin-top: 32px;
 }
 .banner-box .banner-info h2 {
@@ -168,20 +217,32 @@ input:focus, button {
   font-size: 28px;
   color: #ffffff;
 }
-.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+/* bxSlider */
+.bx-wrapper .bx-viewport {
+  box-shadow: none;
+  border: 0;
+  left: 0;
+}
+.bx-wrapper .bx-pager {
+  font-size: 0;
+  height: 12px;
+  padding-top: 0;
   bottom: 32px;
 }
-.swiper-pagination-bullet {
+.bx-wrapper .bx-pager.bx-default-pager a {
   width: 12px;
   height: 12px;
-  background: #ffffff;
+  border-radius: 6px;
+  background-color: #ffffff;
   opacity: 0.6;
 }
-.swiper-pagination-bullet-active {
-  background: #ffffff;
-  width: 40px;
-  border-radius: 6px;
+.bx-wrapper .bx-pager.bx-default-pager a.active {
   opacity: 1;
+  width: 40px;
+  background-color: #ffffff;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+  background-color: #ffffff;
 }
 
 .content-meta-box {
@@ -241,4 +302,176 @@ input:focus, button {
   bottom: 23px;
   width: 455px;
   height: 341px;
+}
+
+/** ======================== joinUs ====================== **/
+.page-top{
+  width: 100%;
+  height: 310px;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.join-way-box {}
+.join-way-list {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.join-way-list .join-way-title {
+  margin-top: 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid #D8D8D8;
+  text-align: left;
+}
+.join-way-list .join-way-step {
+  margin: 40px 0;
+  padding-left: 92px;
+  text-align: center;
+  overflow: hidden;
+}
+.join-way-list .join-way-step .join-step-name {
+  float: left;
+  display: inline-block;
+  padding: 22px 26px;
+  line-height: 1;
+  border-radius: 32px;
+  background: #E5EBF6;
+  border: 1px solid #C2CAD8;
+  overflow: hidden;
+  font-size: 18px;
+  color: #31373D;
+  letter-spacing: 0;
+}
+.join-way-list .join-way-step .join-step-arrow {
+  float: left;
+  display: inline-block;
+  width: 74px;
+  height: 14px;
+  margin: 25px 23px;
+  background: url("../imgs/step_arraw.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+/** ======================== recruit ====================== **/
+.recruit-header-bg {
+  background-color: rgba(2, 6, 18, 1);
+}
+.office-box {
+  padding-top: 56px;
+  margin-top: 64px;
+  overflow: hidden;
+}
+.office-box .office-item {
+  float: left;
+  position: relative;
+  width: 570px;
+  height: 200px;
+  margin: 0 15px 32px 15px;
+  padding: 16px 20px;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px 0 rgba(223,228,235,0.73);
+}
+.office-box .office-item .xw-button-outline-default {
+  position: absolute;
+  top: 28px;
+  right: 20px;
+}
+.office-box .office-item .office-item-inner {
+  height: 168px;
+  overflow: hidden;
+}
+.office-box .office-item .office-title {
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #31373D;
+}
+.office-box .office-item .office-meta {
+  margin-top: 4px;
+  line-height: 22px;
+  font-size: 16px;
+  color: #000000;
+}
+.office-box .office-item .office-info {
+  margin-top: 13px;
+  font-size: 16px;
+  color: #505860;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+/* 职位弹层 */
+.xw-layer-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.xw-office-layer {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 720px;
+  margin-left: -360px;
+  padding: 44px 48px 100px 48px;
+  background-color: #ffffff;
+}
+.xw-office-layer .office-title {
+  font-size: 20px;
+}
+.xw-office-layer .office-meta {
+  margin-top: 4px;
+  line-height: 22px;
+  font-size: 16px;
+  color: #000000;
+}
+.xw-office-layer .office-info {
+  margin-top: 13px;
+  font-size: 14px;
+  color: #505860;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.xw-office-layer .office-layer-ft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  border-top: 1px solid #D8D8D8;
+  text-align: center;
+}
+.xw-office-layer .office-layer-ft .xw-button_default_middle {
+  margin-top: 16px;
+}
+
+/** ======================== contactUs ====================== **/
+.xw-position-box {
+  position: relative;
+  width: 100%;
+  margin-top: 64px;
+  padding-top: 56px;
+}
+.xw-position-box .xw-position-img {
+  width: 100%;
+  height: 320px;
+}
+.xw-position-box .xw-info {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  width: 50%;
+}
+.xw-position-box .xw-info p {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #31373D;
+}
+.xw-position-box .xw-info .xw-button-default-icon {
+  margin-top: 30px;
+}
+.join-message-box {
+  margin-top: 80px;
 }
