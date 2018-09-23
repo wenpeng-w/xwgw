@@ -6,14 +6,16 @@
     <meta name="renderer" content="webkit">
     <title>星威汽车科技(无锡)有限公司官网 - 联系我们</title>
     <meta name="keywords" content="星威汽车科技(无锡)有限公司官网">
-    <meta name="description" content="星威汽车科技(无锡)有限公司是一家专注于商用车后市场解决机制的科技公司。星威致力于商用车维修一站式连锁加盟服务，向商用车维修服务群体提供技术、管理、产品、设备、人才等，实现加盟商为车主提供便捷、专业、优质、省心服务的目标，让车主在路途中安全无忧的行驶。">
+    <meta name="description"
+          content="星威汽车科技(无锡)有限公司是一家专注于商用车后市场解决机制的科技公司。星威致力于商用车维修一站式连锁加盟服务，向商用车维修服务群体提供技术、管理、产品、设备、人才等，实现加盟商为车主提供便捷、专业、优质、省心服务的目标，让车主在路途中安全无忧的行驶。">
     <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
 <!-- Header -->
 <div class="header header-fixed recruit-header-bg">
     <div class="container">
-        <a class="header-logo" href="index.html"><img class="header-logo-img" src="./imgs/logo.png" alt="星威汽车科技(无锡)有限公司"></a>
+        <a class="header-logo" href="index.html"><img class="header-logo-img" src="./imgs/logo.png"
+                                                      alt="星威汽车科技(无锡)有限公司"></a>
         <ul class="header-nav">
             <li class="nav-item"><a href="index.html">闪耀星威</a></li>
             <li class="nav-item"><a href="news.html">业态资讯</a></li>
@@ -32,7 +34,8 @@
                 <p>公司名称：星威汽车科技（无锡）有限公司</p>
                 <p>公司地址：无锡惠山经济开发区风电园风能路55-10</p>
                 <p>联系电话：0510-83623511</p>
-                <a href="" class="xw-button-default-icon"><i class="xw-button-icon" style="background-image: url('./imgs/icon_bianji.png')"></i>申请加盟</a>
+                <a href="javascript: void(0);" onclick="showMsgLayer()" class="xw-button-default-icon"><i class="xw-button-icon"
+                                                             style="background-image: url('./imgs/icon_bianji.png')"></i>申请加盟</a>
             </div>
         </div>
     </div>
@@ -44,9 +47,32 @@
                 <h3 class="item-title">加盟留言</h3>
                 <span class="item-title-line"></span>
             </div>
-            <div class="message-list">
-                div
-            </div>
+            <ul class="message-list">
+                <li class="message-item">
+                    <div class="msg-hd">
+                        <span class="msg-avatar"><img src="./imgs/avatar.png" alt=""></span><span
+                            class="msg-name">张**</span><span class="msg-date">2018-09-23</span>
+                    </div>
+                    <p class="msg-bd">如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，
+                        那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
+                </li>
+                <li class="message-item">
+                    <div class="msg-hd">
+                        <span class="msg-avatar"><img src="./imgs/avatar.png" alt=""></span><span
+                            class="msg-name">张**</span><span class="msg-date">2018-09-23</span>
+                    </div>
+                    <p class="msg-bd">如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，
+                        那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
+                </li>
+                <li class="message-item">
+                    <div class="msg-hd">
+                        <span class="msg-avatar"><img src="./imgs/avatar.png" alt=""></span><span
+                            class="msg-name">张**</span><span class="msg-date">2018-09-23</span>
+                    </div>
+                    <p class="msg-bd">如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，
+                        那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -60,9 +86,119 @@
     </div>
 </div>
 <!-- /Footer -->
+<div id="msgLayer" class="xw-layer-mask" style="display: none">
+    <div class="xw-layer">
+        <div class="xw-layer-hd">
+            <h3 class="layer-title">加盟留言</h3>
+        </div>
+        <div id="officeLayerContent" class="xw-form-content">
+            <p class="form-tips">请正确填写以下信息，我们会第一时间和您取得联系</p>
+            <from id="formMsg" class="msg-form">
+                <div class="form-cell">
+                    <i class="required-mark">*</i><label>公司名称</label><input class="inputMsg" onblur="blurVerify(this)" name="companyName" placeholder="请输入公司名称" type="text">
+                    <p class="error-tips">请输入公司名称</p>
+                </div>
+                <div class="form-cell">
+                    <i class="required-mark">*</i><label>联系人</label><input class="inputMsg" onblur="blurVerify(this)" name="userName" placeholder="请输入联系人姓名" type="text">
+                    <p class="error-tips">请输入联系人姓名</p>
+                </div>
+                <div class="form-cell">
+                    <i class="required-mark">*</i><label>联系电话</label><input class="inputMsg" onblur="blurVerify(this)" name="phone" placeholder="请输入联系人电话" type="text">
+                    <p class="error-tips">请输入联系人电话</p>
+                </div>
+                <div class="form-cell">
+                    <i class="required-mark">*</i><label class="textarea-label">留言</label><textarea class="inputMsg" name="message" onblur="blurVerify(this)" placeholder="留言给我们，以便我们及时联系您。" style=""></textarea>
+                    <p class="error-tips">请留言给我们，以便我们及时联系您。</p>
+                </div>
+            </from>
+        </div>
+        <div class="xw-layer-ft">
+            <span onclick="submitMessage()" class="xw-button xw-button_default_middle">确定</span>
+            <span onclick="closeMessage()" class="xw-button xw-button_primary_middle">取消</span>
+        </div>
+    </div>
+</div>
+<div id="msgSuccessLayer" class="xw-layer-mask" style="display: none">
+    <div class="xw-layer status-layer">
+        <div class="xw-status-content">
+            <img class="status-icon" src="./imgs/success_icon.png" alt="">
+            <p class="status-info">留言提交成功，我们会尽快与您联系</p>
+        </div>
+        <div class="xw-layer-ft">
+            <span onclick="msgSuccessLayer()" class="xw-button xw-button_default_middle">确定</span>
+        </div>
+    </div>
+</div>
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script>
+    /**
+     * 提交表单（加盟留言表单）
+     */
+    function submitMessage () {
+        var msgArr = [];
+        var $inputEles = $('#formMsg').find('.inputMsg');
+        for (var i = 0, len = $inputEles.length; i < len; i++) {
+            var $inputEle = $inputEles.eq(i);
+            var inputName = $inputEle.attr('name');
+            var inputVal = $inputEle.val().trim();
+            msgArr.push({
+                name: inputName,
+                msg: inputVal
+            });
+            if (inputVal === '') {
+                $inputEle.next().css('visibility', 'visible');
+            } else {
+                $inputEle.next().css('visibility', 'hidden');
+            }
+        };
+        for (var j = 0, len = msgArr.length; j < len; j++) {
+            if (msgArr[j].msg === '') {
+                return
+            }
+        };
+        // 校验通过，提交表单数据接口
+        console.log(msgArr);
+        $('#msgLayer').hide();
+        $('#msgSuccessLayer').show();
+        siteLayerPos('#msgSuccessLayer');
+    }
 
+    /**
+     * 失去焦点时校验 当前输入框的值
+     * @param _this
+     */
+    function blurVerify (_this) {
+        var $this = $(_this);
+        var msg = $this.val().trim();
+        if (!msg || msg === '') {
+            $this.next().css('visibility', 'visible');
+        } else {
+            $this.next().css('visibility', 'hidden');
+        }
+    }
+
+    // 显示加盟留言弹层
+    function showMsgLayer () {
+        $('#msgLayer').show();
+        siteLayerPos('#msgLayer');
+    }
+    // 隐藏加盟留言弹层
+    function closeMessage () {
+        $('#msgLayer').hide();
+    }
+    // 隐藏状态弹层
+    function msgSuccessLayer () {
+        $('#msgSuccessLayer').hide();
+    }
+
+    // 设置弹层的位置（垂直居中）
+    function siteLayerPos (id) {
+        var $id = $(id);
+        var winH = $(window).height();
+        var headerH = $('.header').height();
+        var layerH = $id.find('.xw-layer').height();
+        $id.find('.xw-layer').css('top', (winH - layerH + headerH) / 2);
+    }
 </script>
 </body>
 </html>

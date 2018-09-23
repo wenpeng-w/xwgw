@@ -165,10 +165,10 @@
 
 <!-- 职位弹层 -->
 <div id="officeLayer" class="xw-layer-mask" style="display: none">
-    <div class="xw-office-layer">
+    <div class="xw-layer">
         <div id="officeLayerContent" class="office-layer-content"></div>
-        <div class="office-layer-ft">
-            <span onclick="closeOfficeLayer()" class="xw-button_default_middle">确定</span>
+        <div class="xw-layer-ft">
+            <span onclick="closeLayer()" class="xw-button_default_middle">确定</span>
         </div>
     </div>
 </div>
@@ -182,11 +182,21 @@
         $officeLayer.find('.office-layer-content').text('');
         $officeLayer.find('.office-layer-content').append($('#' + id)[0].innerHTML);
         $officeLayer.show();
+        siteLayerPos('#officeLayer');
     }
 
     // 隐藏职位弹层
-    function closeOfficeLayer () {
+    function closeLayer () {
         $officeLayer.hide();
+    }
+
+    // 设置弹层的位置（垂直居中）
+    function siteLayerPos (id) {
+        var $id = $(id);
+        var winH = $(window).height();
+        var headerH = $('.header').height();
+        var layerH = $id.find('.xw-layer').height();
+        $id.find('.xw-layer').css('top', (winH - layerH + headerH) / 2);
     }
 </script>
 </body>
