@@ -24,6 +24,7 @@
     </div>
 </div>
 <!-- /Header -->
+
 <div class="content">
     <div class="office-box">
         <div class="container">
@@ -152,6 +153,7 @@
         </div>
     </div>
 </div>
+
 <!-- Footer -->
 <div class="footer">
     <div class="container">
@@ -173,10 +175,10 @@
     </div>
 </div>
 <!-- /职位弹层 -->
-<script src="./js/jquery.js"></script>
+<<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/basic.js"></script>
 <script>
     var $officeLayer = $('#officeLayer');
-
     // 获取职位详细信息并显示该弹层
     function getOfficeDetail (id) {
         $officeLayer.find('.office-layer-content').text('');
@@ -184,19 +186,9 @@
         $officeLayer.show();
         siteLayerPos('#officeLayer');
     }
-
     // 隐藏职位弹层
     function closeLayer () {
         $officeLayer.hide();
-    }
-
-    // 设置弹层的位置（垂直居中）
-    function siteLayerPos (id) {
-        var $id = $(id);
-        var winH = $(window).height();
-        var headerH = $('.header').height();
-        var layerH = $id.find('.xw-layer').height();
-        $id.find('.xw-layer').css('top', (winH - layerH + headerH) / 2);
     }
 </script>
 </body>

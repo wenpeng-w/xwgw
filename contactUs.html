@@ -26,6 +26,7 @@
     </div>
 </div>
 <!-- /Header -->
+
 <div class="content">
     <div class="xw-position-box">
         <div class="container">
@@ -73,9 +74,11 @@
                         那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
                 </li>
             </ul>
+            <ul id="pages" class="pages"></ul>
         </div>
     </div>
 </div>
+
 <!-- Footer -->
 <div class="footer">
     <div class="container">
@@ -86,6 +89,8 @@
     </div>
 </div>
 <!-- /Footer -->
+
+<!-- 加盟留言弹层 -->
 <div id="msgLayer" class="xw-layer-mask" style="display: none">
     <div class="xw-layer">
         <div class="xw-layer-hd">
@@ -93,7 +98,7 @@
         </div>
         <div id="officeLayerContent" class="xw-form-content">
             <p class="form-tips">请正确填写以下信息，我们会第一时间和您取得联系</p>
-            <from id="formMsg" class="msg-form">
+            <form id="formMsg" class="msg-form">
                 <div class="form-cell">
                     <i class="required-mark">*</i><label>公司名称</label><input class="inputMsg" onblur="blurVerify(this)" name="companyName" placeholder="请输入公司名称" type="text">
                     <p class="error-tips">请输入公司名称</p>
@@ -110,7 +115,7 @@
                     <i class="required-mark">*</i><label class="textarea-label">留言</label><textarea class="inputMsg" name="message" onblur="blurVerify(this)" placeholder="留言给我们，以便我们及时联系您。" style=""></textarea>
                     <p class="error-tips">请留言给我们，以便我们及时联系您。</p>
                 </div>
-            </from>
+            </form>
         </div>
         <div class="xw-layer-ft">
             <span onclick="submitMessage()" class="xw-button xw-button_default_middle">确定</span>
@@ -130,75 +135,21 @@
     </div>
 </div>
 <script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jqpaginator.min.js"></script>
+<script src="./js/basic.js"></script>
 <script>
-    /**
-     * 提交表单（加盟留言表单）
-     */
-    function submitMessage () {
-        var msgArr = [];
-        var $inputEles = $('#formMsg').find('.inputMsg');
-        for (var i = 0, len = $inputEles.length; i < len; i++) {
-            var $inputEle = $inputEles.eq(i);
-            var inputName = $inputEle.attr('name');
-            var inputVal = $inputEle.val().trim();
-            msgArr.push({
-                name: inputName,
-                msg: inputVal
-            });
-            if (inputVal === '') {
-                $inputEle.next().css('visibility', 'visible');
-            } else {
-                $inputEle.next().css('visibility', 'hidden');
-            }
-        };
-        for (var j = 0, len = msgArr.length; j < len; j++) {
-            if (msgArr[j].msg === '') {
-                return
-            }
-        };
-        // 校验通过，提交表单数据接口
-        console.log(msgArr);
-        $('#msgLayer').hide();
-        $('#msgSuccessLayer').show();
-        siteLayerPos('#msgSuccessLayer');
-    }
-
-    /**
-     * 失去焦点时校验 当前输入框的值
-     * @param _this
-     */
-    function blurVerify (_this) {
-        var $this = $(_this);
-        var msg = $this.val().trim();
-        if (!msg || msg === '') {
-            $this.next().css('visibility', 'visible');
-        } else {
-            $this.next().css('visibility', 'hidden');
+    // 分页组件
+    $('#pages').jqPaginator({
+        totalPages: 8,      // 设置分页的总页数
+        visiblePages: 10,   // 设置最多显示的页码数
+        currentPage: 1,     // 设置当前的页码
+        prev: '<li class="prev"><a href="javascript:void(0);">上一页<\/a><\/li>',
+        next: '<li class="next"><a href="javascript:void(0);">下一页<\/a><\/li>',
+        page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+        onPageChange: function (num) {
+            console.log('当前是第：' + num + ' 页')
         }
-    }
-
-    // 显示加盟留言弹层
-    function showMsgLayer () {
-        $('#msgLayer').show();
-        siteLayerPos('#msgLayer');
-    }
-    // 隐藏加盟留言弹层
-    function closeMessage () {
-        $('#msgLayer').hide();
-    }
-    // 隐藏状态弹层
-    function msgSuccessLayer () {
-        $('#msgSuccessLayer').hide();
-    }
-
-    // 设置弹层的位置（垂直居中）
-    function siteLayerPos (id) {
-        var $id = $(id);
-        var winH = $(window).height();
-        var headerH = $('.header').height();
-        var layerH = $id.find('.xw-layer').height();
-        $id.find('.xw-layer').css('top', (winH - layerH + headerH) / 2);
-    }
+    });
 </script>
 </body>
 </html>

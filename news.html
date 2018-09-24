@@ -24,6 +24,57 @@
     </div>
 </div>
 <!-- /Header -->
+
+<div class="content">
+    <div class="xw-news-box">
+        <div class="container">
+            <div class="content-left">
+                <ul class="news-list">
+                    <li class="news">
+                        <div class="news-date"><span class="month">09月</span><span class="day">24</span></div>
+                        <div class="news-desc">
+                            <h2 class="news-title"><a href="article.html">动态标动态标题动态标题动态标题动态标题题</a></h2>
+                            <p class="news-introduction">动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内</p>
+                        </div>
+                    </li>
+                    <li class="news">
+                        <div class="news-date"><span class="month">09月</span><span class="day">24</span></div>
+                        <div class="news-desc">
+                            <h2 class="news-title"><a href="javascript: void(0);">动态标动态标题动态标题动态标题动态标题题</a></h2>
+                            <p class="news-introduction">动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内</p>
+                        </div>
+                    </li>
+                    <li class="news">
+                        <div class="news-date"><span class="month">09月</span><span class="day">24</span></div>
+                        <div class="news-desc">
+                            <h2 class="news-title"><a href="javascript: void(0);">动态标动态标题动态标题动态标题动态标题题</a></h2>
+                            <p class="news-introduction">动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内</p>
+                        </div>
+                    </li>
+                    <li class="news">
+                        <div class="news-date"><span class="month">09月</span><span class="day">24</span></div>
+                        <div class="news-desc">
+                            <h2 class="news-title"><a href="javascript: void(0);">动态标动态标题动态标题动态标题动态标题题</a></h2>
+                            <p class="news-introduction">动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul id="pages" class="pages"></ul>
+            </div>
+            <div class="content-right">
+                <div class="sidebar news-tab-box">
+                    <h3 class="sidebar-title"><span>业态资讯</span></h3>
+                    <ul id="sideBar" class="sidebar-tab-ul">
+                        <li class="sidebar-tab-li current"><a href="javascript: void(0);"><i></i>全<em></em><em></em>部<span class="arrow-right"></span></a></li>
+                        <li class="sidebar-tab-li"><a href="javascript: void(0);"><i></i>行业动态<span class="arrow-right"></span></a></li>
+                        <li class="sidebar-tab-li"><a href="javascript: void(0);"><i></i>星威动态<span class="arrow-right"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Footer -->
 <div class="footer">
     <div class="container">
@@ -35,8 +86,21 @@
 </div>
 <!-- /Footer -->
 <script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/basic.js"></script>
+<script src="./js/jqpaginator.min.js"></script>
 <script>
-
+    // 分页组件
+    $('#pages').jqPaginator({
+        totalPages: 8,      // 设置分页的总页数
+        visiblePages: 10,   // 设置最多显示的页码数
+        currentPage: 1,     // 设置当前的页码
+        prev: '<li class="prev"><a href="javascript:void(0);">上一页<\/a><\/li>',
+        next: '<li class="next"><a href="javascript:void(0);">下一页<\/a><\/li>',
+        page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+        onPageChange: function (num) {
+           console.log('当前是： ' + num + ' 页')
+        }
+    });
 </script>
 </body>
 </html>

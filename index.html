@@ -25,6 +25,7 @@
   </div>
 </div>
 <!-- /Header -->
+
 <!-- Banner -->
 <div class="banner-box">
   <ul id="bannerContainer">
@@ -52,13 +53,14 @@
         <div class="banner-info-inner">
           <h2>申请加盟入口</h2>
           <p>技能培训，数据查询，云检测系列智能化技术服务方案</p>
-          <a class="xw-button_default" href="">立即加入</a>
+          <a class="xw-button_default" href="javascript: void(0);" onclick="showMsgLayer()">立即加入</a>
         </div>
       </div>
     </li>
   </ul>
 </div>
 <!-- /Banner -->
+
 <div class="content-meta-box">
   <div class="container">
     <div class="meta-item">
@@ -107,6 +109,7 @@
     </div>
   </div>
 </div>
+
 <!-- Footer -->
 <div class="footer">
   <div class="container">
@@ -117,9 +120,56 @@
   </div>
 </div>
 <!-- /Footer -->
+
+<!-- 加盟留言弹层 -->
+<div id="msgLayer" class="xw-layer-mask" style="display: none">
+  <div class="xw-layer">
+    <div class="xw-layer-hd">
+      <h3 class="layer-title">加盟留言</h3>
+    </div>
+    <div id="officeLayerContent" class="xw-form-content">
+      <p class="form-tips">请正确填写以下信息，我们会第一时间和您取得联系</p>
+      <form id="formMsg" class="msg-form">
+        <div class="form-cell">
+          <i class="required-mark">*</i><label>公司名称</label><input class="inputMsg" onblur="blurVerify(this)" name="companyName" placeholder="请输入公司名称" type="text">
+          <p class="error-tips">请输入公司名称</p>
+        </div>
+        <div class="form-cell">
+          <i class="required-mark">*</i><label>联系人</label><input class="inputMsg" onblur="blurVerify(this)" name="userName" placeholder="请输入联系人姓名" type="text">
+          <p class="error-tips">请输入联系人姓名</p>
+        </div>
+        <div class="form-cell">
+          <i class="required-mark">*</i><label>联系电话</label><input class="inputMsg" onblur="blurVerify(this)" name="phone" placeholder="请输入联系人电话" type="text">
+          <p class="error-tips">请输入联系人电话</p>
+        </div>
+        <div class="form-cell">
+          <i class="required-mark">*</i><label class="textarea-label">留言</label><textarea class="inputMsg" name="message" onblur="blurVerify(this)" placeholder="留言给我们，以便我们及时联系您。" style=""></textarea>
+          <p class="error-tips">请留言给我们，以便我们及时联系您。</p>
+        </div>
+      </form>
+    </div>
+    <div class="xw-layer-ft">
+      <span onclick="submitMessage()" class="xw-button xw-button_default_middle">确定</span>
+      <span onclick="closeMessage()" class="xw-button xw-button_primary_middle">取消</span>
+    </div>
+  </div>
+</div>
+<div id="msgSuccessLayer" class="xw-layer-mask" style="display: none">
+  <div class="xw-layer status-layer">
+    <div class="xw-status-content">
+      <img class="status-icon" src="./imgs/success_icon.png" alt="">
+      <p class="status-info">留言提交成功，我们会尽快与您联系</p>
+    </div>
+    <div class="xw-layer-ft">
+      <span onclick="msgSuccessLayer()" class="xw-button xw-button_default_middle">确定</span>
+    </div>
+  </div>
+</div>
 <script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/basic.js"></script>
 <script src="./js/jquery.bxslider.js"></script>
 <script>
+    // Banner 组件
     $('#bannerContainer').bxSlider({
         mode:'horizontal', // 默认的是水平
         displaySlideQty:1, // 显示li的个数
